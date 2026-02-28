@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <h2>JS Form Validation</h2>
+    <form action="#" name="myform" method="post" onsubmit="return validateForm()">
+        <div id="name">
+        Name: <input type="text" name="fname"  required><span class="formerror" style="color: red;"><b></b></span><br><br>
+        </div>
+        <div id="email">
+        Email: <input type="email" name="femail" id="email" required><span class="formerror" style="color: red;"><b></b></span><br><br>
+        </div>
+        <div id="age">
+        Age: <input type="number" name="fage" id="age" required><span class="formerror" style="color: red;"><b></b></span><br><br>
+        </div>
+        <div id="phn">
+        Phone: <input type="number" name="fphone" id="phone" required><span class="formerror" style="color: red;"><b></b></span><br><br>
+        </div>
+        <div id="pass">
+        Password: <input type="password" name="fpass" id="password" required><span class="formerror" style="color: red;"><b></b></span><br><br>
+        </div>
+        <div id="cpass">
+        Confirm Password: <input type="password" name="fcpass" id="cpassword" required><span class="formerror" style="color: red;"><b></b></span><br><br>
+        </div>
+        <input type="submit" name="fbtn" value="Submit">
+    </form>
+</body>
+<script>
+    //cleaning error after resolving it 
+    function clearErrors(){
+        errors = document.getElementsByClassName('formerror');
+        for(let item of errors){
+            item.innerHTML = "";
+        }
+    }
+
+    function seterror(id, error){
+        let element = document.getElementById(id);
+        element.getElementsByClassName('formerror')[0].innerHTML = error;
+    }
+
+    
+
+    //below is the logic which is used to validate form with multiple conditions
+    function validateForm(){
+        var returnval = true;   //if this is true form is submitted if false then form is not submitted
+        clearErrors();
+        
+        var name = document.forms["myform"]["fname"].value;
+        if(name.trim().length < 5){
+            seterror("name", "*Length of name is too short!");
+            returnval = false;
+        }
+
+        var email = document.forms["myform"]["femail"].value;
+        if(email.trim().length > 20){
+            seterror("email", "*Email Id is too long!");
+            returnval = false;
+        }
+
+        var age = document.forms["myform"]["fage"].value;
+        var ageNum = Number(age);
+        if(ageNum <= 0 || ageNum > 100){
+            seterror("age", "*Please Enter Valid Age!")
+            returnval = false;
+        }
+        
+        var phn = document.forms["myform"]["fphone"].value;
+        if (phn.length != 10){
+            seterror("phn", "*Pease Enter Valid Phone Number!")
+            returnval = false;
+        }
+        
+        var password = document.forms["myform"]["fpass"].value;
+        if(password.length < 8){
+            seterror("pass", "*Password must be atleast 8 characters long!")
+            returnval = false;
+
+            let hasUpper = /[A-Z]/.test(password);  // to check for upper case letter in password
+            if(!hasUpper){
+                seterror("pass", "*Paswword must contain atleast one uppercase letter!")
+                returnval = false;
+            }
+
+            let hasLower = /[a-z]/.test(password);
+            if(!hasLower){
+                seterror("pass", "*Password must contain atleast one lowercase letter!")
+                returnval = false;
+            }
+
+            let hasNumber = /[0-9]/.test(password);
+            if(!hasNumber){
+                seterror("pass", "*Password must contain atleast one number")
+                returnval = false;
+            }
+
+            let hasSpecial = /[!@#$%&*]/.test(password);
+            if(!hasSpecial){
+                seterror("pass", "*Password must contain atleast one special character!")
+                returnval = false;
+            }
+
+        }
+        var cpassword = document.forms["myform"]["fcpass"].value;
+        if(password != cpassword){
+            seterror("cpass", "*Password is not same!")
+            returnval = false;
+        }
+        return returnval;
+    }
+</script>
+</html>

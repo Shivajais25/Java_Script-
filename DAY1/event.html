@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Events</title>
+  </head>
+  <body>
+    <h2>JS Events Form</h2>
+    <!-- <form action="#" id="form">
+        <input type="text" placeholder="Enter your name">
+        <button type="submit" id="submit">submit</button><br><br>
+        <input type="number" placeholder="Enter your age">
+        <button type="reset">Reset</button><br><br>
+    </form>
+ -->
+    <a href="https://velouralifestyle.com" id="veloura">velouralifestyle</a
+    ><br />
+    <ul id="unordered">
+      <li id="owl">OWl</li>
+      <li id="cat">CAT</li>
+      <li id="dog">DOG</li>
+      <li id="mouse">MOUSE</li>
+      <li id="hamster">HAMSTER</li>
+    </ul>
+  </body>
+  <script>
+    //IF FALSE so it is called event bubbling which means if click on submit so submit clicked print then form clicked
+    //IF TRUE so it is called event capturing which means form clicked then submit clicked
+    // document.getElementById('form').addEventListener('click', function(e){    //event object 'e'
+    //     console.log("form clicked");
+    //     e.stopPropagation();
+    // }, true)
+
+    // document.getElementById('submit').addEventListener('click', function(e){    //event object 'e'
+    //     console.log("submit clicked");
+    // }, true)
+
+    // //preventdefault() is used to stop the default behaviour of element
+    // document.getElementById('veloura').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     console.log("You click on a link");
+
+    // }, false)
+
+    //ACTIVITY TO REMOVE LIST ITEM (EVENT DELEGATION)
+    document
+      .querySelector("#unordered")
+      .addEventListener("click", function (e) {
+        console.log(e.target.tagName);
+        console.log(e.target.id);
+        if (e.target.tagName === "LI") {
+          let removeItem = e;
+          removeItem.target.remove();
+        }
+      });
+  </script>
+</html>

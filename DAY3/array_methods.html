@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // MAP ARRAY METHOD
+    let marks = [10,20,30];
+    console.log(marks);
+    let newMarks = marks.map(function(m){
+        return m+5;
+    })
+    console.log(newMarks);
+
+    // FILTER ARRAY METHOD
+    let num = [1,2,3,4,5,6,7,8,9,10]
+    let newNum = num.filter(function(n){
+        return n % 2 === 0;
+    })
+    console.log(newNum);
+
+    // FIND ARRAY METHOD    
+    let ages = [11, 18, 22, 17, 65];
+    let age = ages.find(function(a){
+        return a >= 18;
+    })
+    console.log(age)    // RETURN FIRST MATCHED ELEMENT
+
+    // TASKS
+    // MAP ARRAY 
+    let prices = [100, 200, 300];
+    // 10% DISCOUNT LAGA KE NEW ARRAY BANAO
+    let newPrice = prices.map(function(p){
+        return p - (p * 0.1);
+    })
+    console.log("Tasks Answer Below...")
+    console.log(newPrice);
+
+    // FILTER ARRAY
+    let scores = [35, 80, 45, 90, 60];
+    // sirf pass marks (>=50) nikalo
+    let passScores = scores.filter(function(s){
+        return s >= 50;
+    })
+    console.log(passScores);
+
+    // FIND ARRAY
+    let users = [12, 17, 19, 14];
+    // pehla user jiska age >=18 ho
+    let user = users.find(function(u){
+        return u >= 18;
+    })
+    console.log(user);
+
+    // USING ARROW FUNCTION NOW
+    let nums = [2, 4, 6];
+    let sq = nums.map((s) => {
+        return (s * s);
+    })
+    console.log(sq);
+
+    let a = [13, 17, 18, 34, 45, 54];
+    let a2 = a.filter((ag) => {
+        return ag >= 18;
+    })
+    console.log(a2);
+
+    let pc = [50, 120, 80, 200];
+    let p = pc.find((p1) => {
+        return p1 > 100;
+    })
+    console.log(p)
+
+</script>
+</html>
