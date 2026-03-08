@@ -1,6 +1,6 @@
 // Primitive types
-// 7 types - String, Number, Boolean, Null, undefined, Symbol(for making values unique used in advanced js),
-//              BigInt
+/* 7 types - String, Number, Boolean, Null, undefined, Symbol(for making values unique used in advanced js),
+            BigInt  */
 
 
 const id = Symbol('123')    // it returns false because it makes it unique whether the values are similar 
