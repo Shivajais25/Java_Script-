@@ -28,10 +28,10 @@ let Books = [
     }
 ]
 
-// now you have to get those books whose genre is fiction so now you can use filter
+// now you have to get those books whose genre is fiction and published year is 1999 so now you can use filter
 
 let fiction_books = Books.filter( (books) => {
-    return books.genre === "fiction"
+    return books.genre === "fiction" && books.published === "1999"
     
 })
 
