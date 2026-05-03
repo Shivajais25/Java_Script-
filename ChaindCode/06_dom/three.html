@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Node & Element Creation </title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    // create div from here and attach into a webpage
+    const div = document.createElement('div')
+    console.log(div)
+
+    // set id and class name 
+    div.className = 'myclass'
+    div.id = Math.round(Math.random() * 10 + 1) // to get random ID genrated 
+
+    div.setAttribute('title', 'firstdiv')
+
+    // set value in the div 
+    div.innerText = 'Text Generated Through script.js'
+
+    // ATTACHING DIV SO THAT IT WILL BE DISPLAY ON PAGE 
+    document.body.appendChild(div)
+
+    // style div through here 
+
+    div.style.padding = '15px'
+    div.style.backgroundColor = 'green'
+    div.style.color = '#fff'
+    div.style.borderRadius = '15px'
+</script>
+</html>
