@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Create an Element</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="weekday">Monday</div>
+        <div class="weekday">Tuesday</div>
+        <div class="weekday">Wednesday</div>
+        <div class="weekday">Thursday</div>
+        <div class="weekday">Friday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent.children)    // .children is used to return HTML collection (likewise of an array but not real array) of an child list or element
+    console.log(parent.children[3].innerHTML)   // return inner HTML of div having 3 index in div - Thursday
+
+    // using for loop to iterate over the parent.children bcz .children return HTML collection
+
+    for (let index = 0; index < parent.children.length; index++) {
+        console.log(parent.children[index].innerHTML)   
+        
+    }
+
+    // now change the color of weekday - Wednesday into orange
+
+    parent.children[2].style.color = 'orange'
+
+    // some properties like firstElementChild and lastElementChild
+
+    console.log(parent.firstElementChild)   // return first element div
+    console.log(parent.lastElementChild)    // return last element div 
+
+    // direct access children without interacting with parent 
+
+    const dayOne = document.querySelector('.weekday')   // querySelector fetch first value from .weekday
+    console.log(dayOne)
+
+    // to access parent through its child
+    console.log(dayOne.parentElement)
+
+    
+</script>
+</html>
