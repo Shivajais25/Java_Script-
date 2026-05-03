@@ -1,0 +1,37 @@
+body{
+    background-color: #212121;
+    color: #fff;
+}
+
+#first-head{
+    text-align: center;
+    word-spacing: 3px;
+}
+
+.color-box{
+    padding: 15%;
+}
+
+.button{
+    padding: 8%;
+    margin-left: 3%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#green{
+    background-color: rgb(5, 177, 5);
+}
+#orange{
+    background-color: orange;
+}
+#blue{
+    background-color: rgb(79, 79, 252);
+}
+#red{
+    background-color: rgb(247, 18, 18);
+}
+#gray{
+    background-color: gray;
+}
