@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Edit & Remove Elements</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    // Now we have to add more list in existing ul using function 
+
+    // first method 
+
+    function addLanguage(LangName){
+        const li = document.createElement('li')
+        li.innerHTML = LangName
+
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('python')
+    addLanguage('typescript')
+
+    /* DRAWBACK : above function is not good for large scale bcz it traverse the whole 
+                tree and usually a time taking if it contains large values. */
+    
+
+    // SECOND OPTIMIZE METHOD
+
+    function addOptiLanguage(LangName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(LangName))   // it inserts value at node directly which reduce the problem of traversing the whole tree
+
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptiLanguage('golang')
+    addOptiLanguage('ruby')
+
+
+    // NOW EDIT EXISTING LIST 
+    const existingli = document.querySelector('li:nth-child(2)')    // it selects 2nd value from list
+    console.log(existingli)
+
+    // creating new element which is to be replaced with existing 
+    const newli = document.createElement('li')
+    newli.appendChild(document.createTextNode('JAVA'))
+
+    // now replacing it with existing
+    existingli.replaceWith(newli)
+
+
+    // NOW REMOVING ELEMENTS
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+</script>
+</html>
