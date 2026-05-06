@@ -1,0 +1,21 @@
+body{
+    background-color: #212121;
+    color: #fff;
+}
+
+h2{
+    margin-left: 45% ;
+    margin-top: 10%;
+}
+
+.clock{
+    margin-top: 3%;
+    margin-left: 33%;
+    padding: 38px;
+    width: 20%;
+    border: 2px dashed white;
+    border-radius: 8px;
+    color: red;
+    font-size: 30px;
+    padding-left: 12%;
+}
