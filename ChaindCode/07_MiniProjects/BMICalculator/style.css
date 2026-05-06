@@ -1,0 +1,32 @@
+body{
+    background-color: #212121;
+    color: #fff;
+}
+
+#first-head{
+    text-align: center;
+}
+
+.form{
+    margin-top: 5%;
+    padding-left: 38%;
+    font-size: 18px;
+    word-spacing: 3px;
+}
+
+.button{
+    padding: 6px;
+    margin-left: 16%;
+    margin-top: 3%;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.weight-guide{
+    padding-left: 7%;
+    padding-top: 4%;
+}
+.result{
+    padding-top: 3%;
+}
