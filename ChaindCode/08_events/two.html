@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Java Script</h1>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+
+    const changeHead = function(){
+        document.querySelector('h1').innerHTML = "JAVASCRIPT"
+    }
+
+    const clear = setTimeout(changeHead, 2000)    // it change the page head after 2 seconds
+
+    // how to stop timeout to execute above things
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(clear)
+        console.log("STOPPED")
+    })
+</script>
+</html>
