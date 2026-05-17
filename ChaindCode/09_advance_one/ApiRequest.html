@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request || XMLHTTPRequest</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="apidata">
+
+    </div>
+</body>
+
+<script>
+    const div = document.querySelector('.apidata')
+    const image = document.createElement('img')
+    const head = document.createElement('h1')
+    const para = document.createElement('p')
+    const UserUrl = 'https://api.github.com/users/Shivajais25'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', UserUrl)
+
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(data)
+            console.log(data.followers)
+            console.log(data.avatar_url)
+            const urlImage = data.avatar_url
+            div.style.border = '1px solid white'
+            div.style.padding = '2%'
+            div.style.width = '70%'
+            image.src = urlImage
+
+
+            div.appendChild(image)
+            head.innerHTML = data.name
+            div.appendChild(head)
+
+            para.innerHTML = data.bio
+
+            div.appendChild(para)
+
+
+        }
+    }
+    xhr.send()
+</script>
+</html>
