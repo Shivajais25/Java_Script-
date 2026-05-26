@@ -49,4 +49,41 @@ promiseThree.then((user) => {        // then executed when error is false otherw
     console.log(username)
 }).catch((error) => {       // catch to handle error
     console.log(error)
-})    
+})  
+
+
+// now implementing promises through async and await - but yeh error ko sahise handle nhi krta 
+
+const promiseFour = new Promise(function(resolve, reject){
+     setTimeout(function(){
+        let error = true    // if error exist - reject executed or if error false then resolve executed
+
+        if(!error){
+            resolve({username : "JAVASCRIPT", password : "JAVAscript@!21"})
+        }
+
+        else{
+            reject({ Error : "Something went wrong in JS!"})
+        }
+
+    }, 8000)
+})
+
+// here if error exists so we have to use try ad catch to handle it gracefully
+
+async function consumePromiseFour(){
+
+    // if everything goes well then try block will be executed
+
+    try {
+    const response = await promiseFour
+    console.log(response)
+
+    // if error exists then catch will be executed
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+consumePromiseFour()
