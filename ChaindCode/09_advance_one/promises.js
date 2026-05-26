@@ -104,3 +104,18 @@ async function getAllUsers(){
 }
 
 getAllUsers()
+
+
+
+// now do same but using then and catch 
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {       // chaining method of then and catch 
+    console.log(data)
+})
+.catch((error) => {
+    console.log(error)
+})
