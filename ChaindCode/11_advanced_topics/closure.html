@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    
+</body>
+
+<script>
+
+    /* lexical scoping - means function ke andar agr function ko declare kiya hai toh inner function 
+
+        outer waale ko access kr skta hai but sibling function access nhi karega variable wgera
+
+    */
+
+    function outer(){
+
+        let username = 'Shiva'
+        //console.log(secret) - BUT YAHA PARENT CHILD FUNCTION KO NHI 
+
+        // ab yaha pe child parent ko access kr skta hai 
+        function inner_child_one(){
+            let secret = '1223'
+
+            console.log(username)
+        }
+
+        function inner_child_two(){
+            console.log(username)
+           // console.log(secret) - same sibling bhi access nhi kar skta apne sibling elements ko 
+        }
+
+        inner_child_one()
+        inner_child_two()
+    }
+    outer()
+    
+
+
+</script>
+</html>
